@@ -38,3 +38,14 @@ export default App
 // グラフィカルユーザーインターフェイス(GUI)
 // の二つがある。
 
+// JSXとHTMLの違い
+// ①JSX独自の属性がある
+// key、ref、dangeroslySetInnerHTML
+
+// ②使えない属性もある
+// class 、forは、JavaScriptでも使われるため、属性として使用できない。
+// 以下のように置き換えて使うこと。
+// class → className
+// for   → HTMLFor
+
+
