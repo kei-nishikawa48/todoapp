@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Form from "./Form"
+import List from "./List"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App=()=>{
+  return(
+    <>
+      <h1>Todo App</h1>
+      <Form />
+      <List />
+    </>
+  )
 }
+export default App
 
-export default App;
+
+// メモ
+// <React.Fragment></React.Fragment>は<div></div>の書かないバージョンで
+// <></>と省略できる
+
+
+// ライブラリとは
+// 予め、使われそうなプログラムを先に組んでおいてくれたファイルの塊
+
+// フレームワークとは
+// システム開発を楽に行えるように用意された、プログラムの雛形
+// 凡庸性な昨日が予め用意されている
+// 複数人で開発するときにレベルを合わせやすい
+// オリジナリティの高い処理を行おうとすると余計に大変
+
+
+// ユーザーインターフェイスとは
+// 人と物の接点のこと
+// 大きく分けて２種類あり
+// ターミナルなどで行うコマンドライン入力によって操作を行うのが
+// キャラクターユーザーインターフェイス(CUI)
+// アイコンや画像をマウスなどのポインティングデバイスによって指示する
+// グラフィカルユーザーインターフェイス(GUI)
+// の二つがある。
+
