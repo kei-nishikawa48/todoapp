@@ -1,11 +1,17 @@
-import React from 'react';
-import List from './List';
+import React,{useState} from 'react';
 
-const Item = () => {
+
+const Item = ({content}) => {
+  const [isDone, setIsDone]=useState(false)
+
   return ( 
     <li>
-      <input type="checkbox" />
-      <span>サンプルテキスト</span>
+      <input type="checkbox" onChange={()=>{
+        setIsDone(!isDone)
+      }} />
+      <span style={
+        {textDecoration: isDone ? "line-through" : "none"}
+      }>{content}</span>
     </li>
    );
 }

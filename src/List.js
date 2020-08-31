@@ -2,11 +2,16 @@ import React from 'react';
 import Item from "./Item"
 
 
-const List = () => {
+const List = ({todos}) => {
   return ( 
     <ul>
-      <Item/>
-      <Item/>
+      {
+        todos.map((todo,index)=>{
+          return(
+            <Item content={todo.content} key={index}/>
+          )
+        })
+      }
     </ul>
    );
 }
