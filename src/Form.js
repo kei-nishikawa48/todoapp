@@ -1,20 +1,23 @@
 import React,{useState} from 'react';
 
-const Form = ({todos,setTodos}) => {
+const Form = ({addTodo}) => {
   const [value,setValue]=useState("")
-  const handleSubmit = e =>{
-    e.preventDefault()
-    setTodos([
-      ...todos,
-      {
-        content: value
-      }
-    ])
-
+  const handleSubmiterr=e =>{
+    window.alert("空白です。")
   }
-  return ( 
-    <form onSubmit={handleSubmit}>
-      <input type="text" 
+
+  const handleSubmit = e =>{
+      e.preventDefault()
+      addTodo(value)    
+      const textareaform=document.getElementById("tuika")
+      textareaform.value=""
+    }
+      
+    
+
+  return (
+    <form onSubmit={value===""?handleSubmiterr:handleSubmit}>
+      <input type="text" id="tuika"
       onChange={e=>{
         setValue(e.target.value)
       }}
@@ -22,6 +25,6 @@ const Form = ({todos,setTodos}) => {
     </form>
    );
 }
- 
+
 export default Form;
 

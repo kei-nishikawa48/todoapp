@@ -1,8 +1,14 @@
-import React,{useState} from 'react';
+import React ,{useState}from 'react';
 
 
-const Item = ({content}) => {
+
+
+const Item = ({ content, id, deleteTodo }) => {
   const [isDone, setIsDone]=useState(false)
+
+  const handleDelete = () => {
+    deleteTodo(id)
+  }
 
   return ( 
     <li>
@@ -12,6 +18,7 @@ const Item = ({content}) => {
       <span style={
         {textDecoration: isDone ? "line-through" : "none"}
       }>{content}</span>
+      <button onClick={handleDelete}>削除</button>
     </li>
    );
 }
